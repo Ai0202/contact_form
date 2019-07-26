@@ -14,9 +14,11 @@ $content = $_POST['content'];
 
 // SQL文の準備
 
-$stmt = $dbh->prepare('INSERT INTO surveys (nickname, email, content) VALUES (?, ?, ?)');
+$stmt = $dbh
+    ->prepare('INSERT INTO surveys (nickname, email, content) VALUES (?, ?, ?)');
 
 // SQL文の実行
+
 $stmt->execute([$nickname, $email, $content]); //?を変数に置き換えてSQLを実行
 
 ?>
